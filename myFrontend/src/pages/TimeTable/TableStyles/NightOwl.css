@@ -1,0 +1,100 @@
+/* NIGHT OWL THEME */
+
+.table-container {
+    max-width: 950px;
+    margin: 40px auto;
+    background-color: #001122; /* Eine Nuance heller für den Container-Hintergrund */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+.control-panel {
+    display: flex;
+    justify-content: flex-end;
+    align-items: start;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #102A44;
+}
+
+.time-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.time-table th, .time-table td {
+    padding: 12px 15px;
+    border: 1px solid #102A44;
+}
+
+.time-table thead tr {
+    background-color: #011627;
+    color:  #ADDB67;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+}
+
+.time-table tbody tr:nth-child(even) {
+    background-color: #001A33;
+}
+
+.time-table tbody tr:hover {
+    background-color: #102A44;
+}
+
+.col-actions {
+    width: 200px;
+    text-align: center;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.delete-btn {
+    padding: 6px 10px;
+    background-color: #F78C6C;
+    color: #001122;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #D66D4C;
+}
+
+.edit-btn {
+    padding: 6px 10px;
+    background-color: #ADDB67;
+    color: #001122;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.edit-btn:hover {
+    background-color: #92C64D;
+}
+
+select {
+    background-color:#102A44;
+    color: #82AAFF;
+}
+
+.select-wrapper::after {
+    color: #82AAFF;
+}

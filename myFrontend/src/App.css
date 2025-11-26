@@ -1,0 +1,28 @@
+body {
+    font-family: 'Consolas', 'Roboto Mono', monospace;
+    background-color: #011627;
+    color: #D6DEEB;
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+   color: #ADDB67;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px black;
+}
+
+
+

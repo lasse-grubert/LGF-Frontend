@@ -1,0 +1,77 @@
+.table-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.control-panel{
+    border-bottom: 1px solid #eee;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+}
+
+
+.time-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+}
+
+.time-table th, .time-table td {
+    padding: 15px 20px;
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+.time-table thead tr {
+    background-color: #f7f9fc;
+    color: #333;
+    font-weight: 600;
+}
+
+.time-table thead th:first-child { border-top-left-radius: 8px; }
+.time-table thead th:last-child { border-top-right-radius: 8px; }
+
+.time-table tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.time-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.time-table tbody tr:hover {
+    background-color: #f0f4f8;
+}
+
+
+.add-row-btn {
+    background-color: #4c7cff;
+    transition: transform 0.2s;
+}
+.add-row-btn:hover {
+    background-color: #3f60e0;
+    transform: translateY(-1px);
+}
+
+.edit-btn {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+    font-weight: normal;
+}
+.edit-btn:hover {
+    background-color: #e0f0ff;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+.delete-btn:hover {
+    background-color: #c82333;
+}
