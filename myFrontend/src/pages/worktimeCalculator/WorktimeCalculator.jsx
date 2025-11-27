@@ -30,7 +30,11 @@ export function WorktimeCalculator({ onAddRow }) {
         setValuePauseTime("");
     };
 
-    const handleCalculate = async () => {
+    const handleSubmit = async () => {
+        if(!valueStartTime || !valueWorkTime) return;
+        setIsVisible(true);
+        onAddRow(valueStartTime, valueWorkTime, valuePauseTime);
+
         const finalTime = await calculateDepatureTime(valueStartTime, valueWorkTime, valuePauseTime);
         setResult(finalTime);
     }
@@ -65,12 +69,12 @@ export function WorktimeCalculator({ onAddRow }) {
                     onAddRow={onAddRow}
                     setIsVisible={setIsVisible}
                     clearInput={clearInput}
-                    handleCalculate={handleCalculate}
+                    handleSubmit={handleSubmit}
                 />
               
                 {isVisible && (
                     <div className="estimated-worktime-container">
-                        <p>Du kannst um {result !== null ? result : ""} gehen</p>
+                        {result !== null && <p>Du kannst um {result} gehen</p>}
                     </div>
                 )}
             </div>

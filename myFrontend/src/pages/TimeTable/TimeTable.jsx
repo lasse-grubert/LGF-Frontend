@@ -19,10 +19,12 @@ export function TimeTable({rows, deleteRow}) {
                     {rows.map((row) => (
                         <TableRows
                             date={row.date}
+                            key={row.rowId}
                             rowId={row.rowId}
                             arrivalTime={row.arrivalTime}
                             depatureTime={row.depatureTime}
                             workTime={row.workTime}
+                            pauseTime={row.pauseTime}
                             deleteRow={deleteRow}
                         ></TableRows>
                     ))}
