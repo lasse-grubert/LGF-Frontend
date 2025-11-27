@@ -23,7 +23,6 @@ export function WorktimeCalculator({ onAddRow, rows }) {
     const [isVisible, setIsVisible] = useState(false);
     const [result, setResult] = useState(null)
 
-
     const clearInput = () => {
         setValueStartTime("");
         setValueWorkTime("");
