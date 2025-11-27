@@ -1,7 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState } from 'react'
+
 import './App.css'
-import {calculateDepatureTime} from "./utils/calculateDepatureTime.js";
+import {calculateDepatureTime} from "./api/calculateDepatureTime.js";
 import {AppRoutes} from "./AppRoutes.jsx";
 import {getTodaysDate} from "./utils/dateUtils.js";
 
@@ -12,6 +13,8 @@ function App() {
         const newId = uuidv4();
         const depatureTime = await calculateDepatureTime(valueStartTime, valueWorkTime, valuePauseTime);
         setRows([...rows, {key: newId, date: getTodaysDate(), arrivalTime: valueStartTime, workTime: valueWorkTime, depatureTime: depatureTime, pauseTime: valuePauseTime, rowId: newId }])
+
+
 
     }
 

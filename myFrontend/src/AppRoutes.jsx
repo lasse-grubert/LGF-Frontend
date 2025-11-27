@@ -16,7 +16,7 @@ export function AppRoutes({rows, addRow, deleteRow}) {
     return(
         <Routes>
             <Route path="/" element={<HomePage/>}/>
-            <Route path="/worktime-calculator" element={<WorktimeCalculator onAddRow={addRow}/>}/>
+            <Route path="/worktime-calculator" element={<WorktimeCalculator onAddRow={addRow} rows={rows}/>}/>
             <Route path="/timestable" element={<TimeTable rows={rows} deleteRow={deleteRow}/>}/>
             <Route path="/settings/display" element={<Display/>}/>
             <Route path="/settings/profile" element={<Profile/>}/>
