@@ -1,10 +1,9 @@
-import { Navbar } from "../../components/navbar/Navbar.jsx";
+import { SimplePage } from "../../components/SimplePage.jsx";
 
 export function Projects() {
     return (
-        <>
-            <Navbar />
-            <h1>Projects</h1>
-        </>
-    )
+        <SimplePage icon="folder" eyebrow="PROJECTS" title="Projects">
+            Organize your work into projects and keep every log in its place.
+        </SimplePage>
+    );
 }

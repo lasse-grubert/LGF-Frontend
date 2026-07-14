@@ -1,10 +1,10 @@
-import { Navbar } from "../../components/navbar/Navbar.jsx";
+import { SimplePage } from "../../components/SimplePage.jsx";
 
 export function AboutUs() {
-    return(
-        <>
-            <Navbar/>
-            <h1>Born out of Necessity</h1>
-        </>
-    )
+    return (
+        <SimplePage icon="workspaces" eyebrow="ABOUT" title="Born out of Necessity">
+            Worktime started as a simple tool to answer one question — when can I actually leave? —
+            and grew into a calm, focused productivity suite.
+        </SimplePage>
+    );
 }

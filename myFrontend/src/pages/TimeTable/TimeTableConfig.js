@@ -1,9 +1,7 @@
-
 export const INITIAL_COLUMNS = [
-    {key: "date", title: "Date", className: "date-column", isData: true},
-    {key: "arrival", title: "Arrival", className: "arrival-column", isData: true},
-    {key: "departure", title: "Departure", className: "departure-column", isData: true},
-    {key: "worktime", title: "total Worktime", className: "worktime-column", isData: true},
-    {key: "action", title: "Action", className: "action-column", isData: false}
-]
-
+    { key: "date", title: "Date", align: "left" },
+    { key: "arrival", title: "Arrival", align: "left" },
+    { key: "departure", title: "Departure", align: "left" },
+    { key: "worktime", title: "Total Worktime", align: "left" },
+    { key: "action", title: "Action", align: "right" },
+];

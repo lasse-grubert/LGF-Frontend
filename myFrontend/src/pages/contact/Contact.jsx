@@ -1,10 +1,9 @@
-import { Navbar } from "../../components/navbar/Navbar.jsx";
+import { SimplePage } from "../../components/SimplePage.jsx";
 
 export function Contact() {
-    return(
-        <>
-            <Navbar/>
-            <h1>Contact</h1>
-        </>
-    )
+    return (
+        <SimplePage icon="mail" eyebrow="CONTACT" title="Get in Touch">
+            Questions, feedback or ideas? We'd love to hear from you.
+        </SimplePage>
+    );
 }

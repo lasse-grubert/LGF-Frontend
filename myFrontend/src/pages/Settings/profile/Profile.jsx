@@ -1,11 +1,9 @@
-import { Navbar } from "../../../components/navbar/Navbar.jsx";
+import { SimplePage } from "../../../components/SimplePage.jsx";
 
 export function Profile() {
-    return(
-        <>
-            <Navbar/>
-            <div>Profile</div>
-        </>
-
-    )
+    return (
+        <SimplePage icon="person" eyebrow="ACCOUNT" title="Profile">
+            Manage your account details and preferences.
+        </SimplePage>
+    );
 }

@@ -1,16 +1,34 @@
-# React + Vite
+# Worktime · Productive Flux (React Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The LGF frontend, restyled to implement the **"Productive Flux"** Stitch design system
+(Modern Corporate Minimalism, Indigo primary + Emerald success, Inter typography).
 
-Currently, two official plugins are available:
+## Stack
+- React 19 + Vite 7
+- React Router 7
+- Tailwind CSS 3 (design tokens from the Stitch `DESIGN.md` live in `tailwind.config.js`)
+- Material Symbols icons (loaded in `index.html`)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting started
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build in dist/
+```
+The dev server proxies `/time/*` to `http://localhost:8080` for the departure-time
+calculation backend (see `vite.config.js`).
 
-## React Compiler
+## What was implemented from the Stitch design
+- **Home** (`/`) – hero, bento feature grid, "Designed for Deep Work" section
+- **Worktime Calculator** (`/worktime-calculator`) – calculator card, emerald result bar,
+  live countdown until you can leave. Wired to the existing backend call and `addRow`.
+- **Timetable** (`/timestable`) – data table with status chips, inline "Add Row" flow
+  (worktime auto-calculated), delete, pagination footer.
+- **Display Settings** (`/settings/display`) – Light/Dark theme, text scaling and motion
+  toggles are **functional** and persist per device (see `context/ThemeContext.jsx`).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Structure
+- `tailwind.config.js` – full Productive Flux token set (colors, spacing, type, radii)
+- `src/components/` – `navbar/`, `footer/`, `layout/`, shared `Icon`, `SimplePage`
+- `src/context/ThemeContext.jsx` – theme / font scale / animations, applied to `<html>`
+- `src/pages/` – one folder per page, business logic unchanged

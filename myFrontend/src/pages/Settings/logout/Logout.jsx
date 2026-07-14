@@ -1,10 +1,9 @@
-import { Navbar } from "../../../components/navbar/Navbar.jsx";
+import { SimplePage } from "../../../components/SimplePage.jsx";
 
 export function Logout() {
-    return(
-        <>
-            <Navbar/>
-            <h1>Logout</h1>
-        </>
-    )
+    return (
+        <SimplePage icon="logout" eyebrow="SESSION" title="Log Out">
+            You've been signed out. See you next time.
+        </SimplePage>
+    );
 }

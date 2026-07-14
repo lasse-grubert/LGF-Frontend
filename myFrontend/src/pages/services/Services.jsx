@@ -1,10 +1,9 @@
-import { Navbar } from "../../components/navbar/Navbar.jsx";
+import { SimplePage } from "../../components/SimplePage.jsx";
 
 export function Services() {
-    return(
-        <>
-            <Navbar/>
-            <h1>Services</h1>
-        </>
-    )
+    return (
+        <SimplePage icon="apps" eyebrow="SERVICES" title="Services">
+            From time tracking to insights — everything you need to protect your flow.
+        </SimplePage>
+    );
 }

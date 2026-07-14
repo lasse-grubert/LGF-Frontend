@@ -1,39 +1,74 @@
 import { useState } from "react";
-import "./ControlPanel.css"
-import { FaCheck } from "react-icons/fa";
-import { ImExit } from "react-icons/im";
+import { Icon } from "../../components/Icon.jsx";
 
-export function ControlPanel() {
+const inputClass =
+    "w-full bg-white dark:bg-inverse-surface border border-outline-variant rounded-input px-sm py-xs text-body-sm text-on-surface dark:text-inverse-on-surface focus:ring-2 focus:ring-primary/30 focus:outline-none";
 
-    const [isHidden, setIsHidden] = useState(true)
-    const [roundEdgesOnlyTop, setRoundEdgesOnlyTop] = useState(false)
+// Inline add-row rendered inside the table body (matches the Stitch "Add Row" flow).
+export function AddRowInline({ onSave, onCancel }) {
+    const [date, setDate] = useState("");
+    const [arrivalTime, setArrivalTime] = useState("");
+    const [depatureTime, setDepatureTime] = useState("");
 
+    const save = () => {
+        if (!arrivalTime || !depatureTime) return;
+        onSave({ date, arrivalTime, depatureTime });
+        setDate("");
+        setArrivalTime("");
+        setDepatureTime("");
+    };
 
-    return(
-        <>
-            <div className="control-panel">
-
-                <button className={roundEdgesOnlyTop ? "add-row-btn-2-edges-round" : "add-row-btn"} onClick={() => {
-                    console.log("Add Row Clicked");
-                    setIsHidden(false);
-                    setRoundEdgesOnlyTop(true);
-                }}>+ Add Row</button>
-                <div className={isHidden ? "hidden" : roundEdgesOnlyTop ? "row-container-2-edges-round" : "row-container"}>
-                    <input className="input-field-timetable-control-panel" type="text" placeholder="Date"></input>
-                    <input className="input-field-timetable-control-panel" type="text" placeholder="Arrival"></input>
-                    <input className="input-field-timetable-control-panel" type="text" placeholder="Depature"></input>
-                    <input className="input-field-timetable-control-panel" type="text" placeholder="Total Worktime"></input>
-                    <button className="save-btn"><FaCheck className="check-icon"/></button>
+    return (
+        <tr className="border-b border-outline-variant/30 bg-primary-container/5">
+            <td className="px-lg py-md">
+                <input
+                    className={inputClass}
+                    type="date"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                />
+            </td>
+            <td className="px-lg py-md">
+                <input
+                    className={inputClass}
+                    type="time"
+                    value={arrivalTime}
+                    onChange={(e) => setArrivalTime(e.target.value)}
+                />
+            </td>
+            <td className="px-lg py-md">
+                <input
+                    className={inputClass}
+                    type="time"
+                    value={depatureTime}
+                    onChange={(e) => setDepatureTime(e.target.value)}
+                />
+            </td>
+            <td className="px-lg py-md">
+                <div className="w-full bg-surface-container-low dark:bg-inverse-surface/60 border border-outline-variant/50 rounded-input px-sm py-xs text-body-sm text-on-surface-variant dark:text-surface-variant italic">
+                    Auto-calculated
+                </div>
+            </td>
+            <td className="px-lg py-md text-right">
+                <div className="flex justify-end gap-sm">
                     <button
-                        className="exit-btn"
-                        onClick={() => {
-                            setIsHidden(true);
-                            setRoundEdgesOnlyTop(false);
-                        }}>
-                        <ImExit className="exit-icon"/>
+                        type="button"
+                        title="Save"
+                        onClick={save}
+                        className="p-sm rounded-full bg-secondary-container text-on-secondary-fixed-variant hover:scale-105 transition-transform"
+                    >
+                        <Icon name="check" />
+                    </button>
+                    <button
+                        type="button"
+                        title="Cancel"
+                        onClick={onCancel}
+                        className="p-sm rounded-full bg-error-container text-on-error-container hover:scale-105 transition-transform"
+                    >
+                        <Icon name="close" />
                     </button>
                 </div>
-            </div>
-        </>
-    )
+            </td>
+        </tr>
+    );
 }
